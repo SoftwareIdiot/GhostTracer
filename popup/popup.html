@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { font-family: -apple-system, Segoe UI, sans-serif; width: 320px; padding: 15px; background:#050505; color:#f1eeee; font-size:13px; }
+    h1 { font-size: 14px; margin: 0 0 4px; letter-spacing: .3px; }
+    .sub { font-size: 11.5px; color:#b0a2a4; margin-bottom: 14px; }
+    .origin { font-size: 12.5px; color:#ff9da4; word-break: break-all; margin-bottom: 12px; }
+    .row { display:flex; align-items:center; justify-content:space-between; margin-bottom: 8px; }
+    button { background:#141113; color:#f1eeee; border:1px solid #392125; border-radius:7px; padding:9px 11px; font-size:12.5px; cursor:pointer; width:100%; }
+    button { transition: background .16s ease, border-color .16s ease, transform .16s ease; }
+    button:hover:not(:disabled) { border-color:#7f2730; background:#2a1719; transform:translateY(-1px); }
+    button.active { background:#3a1519; border-color:#b52d38; color:#ffb5b9; }
+    #open-dashboard { margin-top: 7px; border-color:#8a2730; color:#ff9da4; }
+    .warn { font-size: 11px; color:#b0a2a4; line-height:1.5; margin-top: 12px; border-top:1px solid #302022; padding-top:10px; }
+    .status { font-size:11.5px; line-height:1.45; margin-top:8px; min-height:18px; }
+    .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; }
+    .dot.on { background:#ef4444; box-shadow:0 0 8px #ef444477; } .dot.off { background:#555; }
+  </style>
+</head>
+<body>
+  <h1>GhostTrace</h1>
+  <div class="sub">Web app pentesting assistant — per-site activation</div>
+  <div class="origin" id="origin">loading…</div>
+  <div class="row"><button id="toggle">Activate observation</button></div>
+  <button id="open-dashboard">Open assessment dashboard</button>
+  <div class="status" id="status"><span class="dot off"></span>Observation inactive</div>
+  <div class="warn">
+    Only activate GhostTrace on applications you are explicitly authorized to test.
+    When active, passive checks update as you browse. GhostTrace records structure,
+    not query, cookie or storage values. Open the dashboard to review the evidence
+    and organize findings.
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
